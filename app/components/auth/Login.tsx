@@ -46,10 +46,10 @@ export default function Login() {
             await contextUser.login(email, password)
             setLoading(false)
             setIsLoginOpen(false)
-        } catch (error) {
+        } catch (error: any) {
             console.log(error)
             setLoading(false)
-            alert(error)
+            setError({ type: 'email', message: error.message })
         }
     }
 

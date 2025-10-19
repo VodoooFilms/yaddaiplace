@@ -65,10 +65,9 @@ export default function Register() {
             setLoading(false)
             setIsLoginOpen(false)
             router.refresh()
-        } catch (error) {
-            console.log(error)
+        } catch (error: any) {
             setLoading(false)
-            alert(error)
+            setError({ type: 'email', message: error.message })
         }
     }
 

@@ -47,9 +47,10 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const login = async (email: string, password: string) => {
     try {
       await account.createEmailSession(email, password);
-      checkUser();
+      await checkUser();
     } catch (error) {
       console.error(error);
+      throw error;
     }
   };
 
