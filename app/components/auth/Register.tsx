@@ -13,10 +13,10 @@ export default function Register() {
     const router = useRouter()
 
     const [loading, setLoading] = useState<boolean>(false);
-    const [name, setName] = useState<string | ''>('');
-    const [email, setEmail] = useState<string | ''>('');
-    const [password, setPassword] = useState<string | ''>('');
-    const [confirmPassword, setConfirmPassword] = useState<string | ''>('');
+    const [name, setName] = useState<string | ' '>('');
+    const [email, setEmail] = useState<string | ' '>('');
+    const [password, setPassword] = useState<string | ' '>('');
+    const [confirmPassword, setConfirmPassword] = useState<string | ' '>('');
     const [error, setError] = useState<ShowErrorObject | null>(null)
 
     const showError = (type: string) => {
@@ -74,13 +74,16 @@ export default function Register() {
     return (
         <>
             <div>
-                <h1 className="text-center text-[28px] mb-4 font-bold">Register</h1>
+                <h1 class="text-center text-[28px] mb-4 font-bold">Join Yaddai</h1>
+                <div class="text-center text-gray-700 mb-4">
+                    Yaddai is an experimental AI-generated video platform, designed as a safe and creative space where users can explore, upload, and share audiovisual content made with tools like Runway, Sora, Pika, or Veo. Join our ethical community that celebrates visual innovation and emerging digital art.
+                </div>
 
                 <div className="px-6 pb-2">
 
                     <TextInput 
                         string={name}
-                        placeholder="Name"
+                        placeholder="Full Name"
                         onUpdate={setName}
                         inputType="text"
                         error={showError('name')}
@@ -120,7 +123,7 @@ export default function Register() {
                     />
                 </div>
 
-                <div className="px-6 pb-2 mt-6">
+                <div class="px-6 pb-2 mt-6">
                     <button 
                         disabled={loading}
                         onClick={() => register()} 
@@ -129,8 +132,11 @@ export default function Register() {
                             ${(!name || !email || !password || !confirmPassword) ? 'bg-gray-200' : 'bg-[#F02C56]'}
                         `}
                     >
-                        {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Register'}
+                        {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Sign up'}
                     </button>
+                </div>
+                <div class="text-center text-gray-500 text-sm mt-4">
+                    By continuing, you agree to our Terms of Service and acknowledge you have read our Privacy Policy.
                 </div>
             </div>
         </>

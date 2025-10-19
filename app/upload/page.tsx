@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import React, { useEffect, useState } from "react";
 import UploadLayout from "../layouts/UploadLayout";
@@ -82,8 +82,8 @@ export default function Upload() {
             <UploadLayout>
                 <div className="w-full mt-[80px] mb-[40px] bg-white shadow-lg rounded-md py-6 md:px-10 px-4">
                     <div>
-                        <h1 className="text-[23px] font-semibold">Upload video</h1>
-                        <h2 className="text-gray-400 mt-1">Post a video to your account</h2>
+                        <h1 className="text-[23px] font-semibold">Share Your AI-Generated Video</h1>
+                        <h2 className="text-gray-400 mt-1">Post your creation to the Yaddai community</h2>
                     </div>
 
                     <div className="mt-8 md:flex gap-6">
@@ -169,7 +169,7 @@ export default function Upload() {
                                 <img 
                                     className="absolute right-4 bottom-6 z-20" 
                                     width="90" 
-                                    src="/images/tiktok-logo-white.png"
+                                    src="/images/yaddai-logo-white.png"
                                 />
                                 <video 
                                     autoPlay
@@ -198,9 +198,9 @@ export default function Upload() {
                                     <PiKnifeLight className="mr-4" size="20"/>
                                 </div>
                                 <div>
-                                    <div className="text-semibold text-[15px] mb-1.5">Divide videos and edit</div>
+                                    <div className="text-semibold text-[15px] mb-1.5">Fine-tune Your Creation</div>
                                     <div className="text-semibold text-[13px] text-gray-400">
-                                        You can quickly divide videos into multiple parts, remove redundant parts and turn landscape videos into portrait videos
+                                        Our tools let you trim, split, and reformat your videos to perfection before sharing.
                                     </div>
                                 </div>
                                 <div className="flex justify-end max-w-[130px] w-full h-full text-center my-auto">
@@ -212,7 +212,7 @@ export default function Upload() {
 
                             <div className="mt-5">
                                 <div className="flex items-center justify-between">
-                                    <div className="mb-1 text-[15px]">Caption</div>
+                                    <div className="mb-1 text-[15px]">Describe your AI creation</div>
                                     <div className="text-gray-400 text-[12px]">{caption.length}/150</div>
                                 </div>
                                 <input 
