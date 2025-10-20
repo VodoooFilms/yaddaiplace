@@ -73,7 +73,7 @@ export default function SideNavMain() {
                         <p className="pt-4 px-2">About Newsroom Yaddai Shop Contact Careers ByteDance</p>
                         <p className="pt-4 px-2">Yaddai for Good Advertise Developers Transparency Yaddai Rewards Yaddai Browse Yaddai Embeds</p>
                         <p className="pt-4 px-2">Help Safety Terms Privacy Creator Portal Community Guidelines</p>
-                        <p className="pt-4 px-2">© 2023 Yaddai</p>
+                        <p className="pt-4 px-2">© 2024 Yaddai</p>
                     </div>
 
                     <div className="pb-14"></div>

@@ -13,10 +13,10 @@ export default function Register() {
     const router = useRouter()
 
     const [loading, setLoading] = useState<boolean>(false);
-    const [name, setName] = useState<string | ' '>('');
-    const [email, setEmail] = useState<string | ' '>('');
-    const [password, setPassword] = useState<string | ' '>('');
-    const [confirmPassword, setConfirmPassword] = useState<string | ' '>('');
+    const [name, setName] = useState<string | ''>('');
+    const [email, setEmail] = useState<string | ''>('');
+    const [password, setPassword] = useState<string | ''>('');
+    const [confirmPassword, setConfirmPassword] = useState<string | ''>('');
     const [error, setError] = useState<ShowErrorObject | null>(null)
 
     const showError = (type: string) => {
@@ -30,7 +30,7 @@ export default function Register() {
         setError(null)
         let isError = false
 
-        const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+        const reg = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 
         if (!name) {
             setError({ type: 'name', message: 'A Name is required'})
@@ -48,7 +48,7 @@ export default function Register() {
             setError({ type: 'password', message: 'The Password needs to be longer'})
             isError = true
         } else if (password != confirmPassword) {
-            setError({ type: 'password', message: 'The Passwords do not match'})
+            setError({ type: 'confirmPassword', message: 'The Passwords do not match'})
             isError = true
         }
         return isError
@@ -74,8 +74,8 @@ export default function Register() {
     return (
         <>
             <div>
-                <h1 class="text-center text-[28px] mb-4 font-bold">Join Yaddai</h1>
-                <div class="text-center text-gray-700 mb-4">
+                <h1 className="text-center text-[28px] mb-4 font-bold">Join Yaddai</h1>
+                <div className="text-center text-gray-700 mb-4">
                     Yaddai is an experimental AI-generated video platform, designed as a safe and creative space where users can explore, upload, and share audiovisual content made with tools like Runway, Sora, Pika, or Veo. Join our ethical community that celebrates visual innovation and emerging digital art.
                 </div>
 
@@ -123,7 +123,7 @@ export default function Register() {
                     />
                 </div>
 
-                <div class="px-6 pb-2 mt-6">
+                <div className="px-6 pb-2 mt-6">
                     <button 
                         disabled={loading}
                         onClick={() => register()} 
@@ -135,7 +135,7 @@ export default function Register() {
                         {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Sign up'}
                     </button>
                 </div>
-                <div class="text-center text-gray-500 text-sm mt-4">
+                <div className="text-center text-gray-500 text-sm mt-4">
                     By continuing, you agree to our Terms of Service and acknowledge you have read our Privacy Policy.
                 </div>
             </div>

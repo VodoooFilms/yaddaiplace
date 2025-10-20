@@ -11,8 +11,8 @@ export default function Login() {
     const contextUser = useUser()
 
     const [loading, setLoading] = useState<boolean>(false);
-    const [email, setEmail] = useState<string | ''>('');
-    const [password, setPassword] = useState<string | ''>('');
+    const [email, setEmail] = useState<string | ' '>('');
+    const [password, setPassword] = useState<string | ' '>('');
     const [error, setError] = useState<ShowErrorObject | null>(null)
 
     const showError = (type: string) => {
@@ -44,6 +44,21 @@ export default function Login() {
         try {
             setLoading(true)
             await contextUser.login(email, password)
+            setLoading(false)
+            setIsLoginOpen(false)
+        } catch (error: any) {
+            console.log(error)
+            setLoading(false)
+            setError({ type: 'email', message: error.message })
+        }
+    }
+
+    const devLogin = async () => {
+        if (!contextUser) return
+
+        try {
+            setLoading(true)
+            await contextUser.login('test@test.com', 'password')
             setLoading(false)
             setIsLoginOpen(false)
         } catch (error: any) {
@@ -88,6 +103,13 @@ export default function Login() {
                         `}
                     >
                         {loading ? <BiLoaderCircle className="animate-spin" color="#ffffff" size={25} /> : 'Log in'}
+                    </button>
+
+                    <button 
+                        onClick={() => devLogin()}
+                        className="flex items-center justify-center w-full text-[17px] font-semibold text-white py-3 rounded-sm bg-blue-500 mt-4"
+                    >
+                        Dev Login
                     </button>
                 </div>
             </div>

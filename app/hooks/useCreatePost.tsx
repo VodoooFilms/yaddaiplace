@@ -5,8 +5,8 @@ const useCreatePost = async (file: File, userId: string, caption: string) => {
 
     try {
         await database.createDocument(
-            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
-            String(process.env.NEXT_PUBLIC_COLLECTION_ID_POST), 
+            "6661c33800264b634833", 
+            "6661c42b0030620579c3", 
             ID.unique(), 
         {
             user_id: userId,
@@ -14,7 +14,7 @@ const useCreatePost = async (file: File, userId: string, caption: string) => {
             video_url: videoId,
             created_at: new Date().toISOString(),
         });
-        await storage.createFile(String(process.env.NEXT_PUBLIC_BUCKET_ID), videoId, file)
+        await storage.createFile("6661c4480029518f8045", videoId, file)
     } catch (error) {
         throw error
     }

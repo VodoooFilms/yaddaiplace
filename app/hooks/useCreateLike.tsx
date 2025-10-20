@@ -3,8 +3,8 @@ import { database, ID } from "@/libs/AppWriteClient"
 const useCreateLike = async (userId: string, postId: string) => {
     try {
         await database.createDocument(
-            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
-            String(process.env.NEXT_PUBLIC_COLLECTION_ID_LIKE), 
+            "6661c33800264b634833", 
+            "6661c4b7002e10c0e515", 
             ID.unique(), 
         {
             user_id: userId,
