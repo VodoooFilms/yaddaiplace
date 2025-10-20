@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 import { persist, devtools, createJSONStorage } from 'zustand/middleware';
-import { Post, PostWithProfile } from '../types';
+import { PostType, PostWithProfile } from '../types';
 import useGetAllPosts from '../hooks/useGetAllPosts';
 import useGetPostsByUser from '../hooks/useGetPostsByUserId';
 import useGetPostById from '../hooks/useGetPostById';
   
 interface PostStore {
     allPosts: PostWithProfile[];
-    postsByUser: Post[];
+    postsByUser: PostType[];
     postById: PostWithProfile | null;
     setAllPosts: () => void;
     setPostsByUser: (userId: string) => void;

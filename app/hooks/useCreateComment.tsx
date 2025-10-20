@@ -3,8 +3,8 @@ import { database, ID } from "@/libs/AppWriteClient"
 const useCreateComment = async (userId: string, postId: string, comment: string) => {
     try {
         await database.createDocument(
-            "6661c33800264b634833", 
-            "6661c4d4001d9600e121", 
+            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
+            String(process.env.NEXT_PUBLIC_COLLECTION_ID_COMMENT), 
             ID.unique(), 
         {
             user_id: userId,

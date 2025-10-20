@@ -3,8 +3,8 @@ import { database } from "@/libs/AppWriteClient"
 const useDeleteComment = async (id: string) => {
     try {
         await database.deleteDocument(
-            "6661c33800264b634833", 
-            "6661c4d4001d9600e121", 
+            String(process.env.NEXT_PUBLIC_DATABASE_ID),
+            String(process.env.NEXT_PUBLIC_COLLECTION_ID_COMMENT),
             id
         );
     } catch (error) {

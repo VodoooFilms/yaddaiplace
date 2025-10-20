@@ -8,7 +8,7 @@ import { AiOutlineClose } from "react-icons/ai"
 import { BiChevronDown, BiChevronUp } from "react-icons/bi"
 import { useRouter } from "next/navigation"
 import ClientOnly from "@/app/components/ClientOnly"
-import { Post, PostPageTypes } from "@/app/types"
+import { PostType, PostPageTypes } from "@/app/types"
 import { usePostStore } from "@/app/stores/post"
 import { useLikeStore } from "@/app/stores/like"
 import { useCommentStore } from "@/app/stores/comment"
@@ -108,13 +108,14 @@ export default function Post({ params }: PostPageTypes) {
                 <div id="InfoSection" className="lg:max-w-[550px] relative w-full h-full bg-white">
                     <div className="py-7" />
 
+                    <div className="w-full h-full overflow-auto">
                         <ClientOnly>
                             {postById ? (
                                 <CommentsHeader post={postById} params={params}/>
                             ) : null}
                         </ClientOnly>
                         <Comments params={params}/>
-
+                    </div>
                 </div>
             </div>
         </>

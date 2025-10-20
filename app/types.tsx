@@ -40,7 +40,7 @@ export interface Like {
     post_id: string;
   }
 
-export interface Post {
+export interface PostType {
     id: string;
     user_id: string;
     video_url: string;
@@ -119,7 +119,7 @@ export interface SingleCommentCompTypes {
 }
 
 export interface PostUserCompTypes {
-    post: Post
+    post: PostType
 }
 
 export interface PostMainCompTypes {

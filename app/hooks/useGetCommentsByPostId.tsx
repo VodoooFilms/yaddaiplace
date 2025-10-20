@@ -4,8 +4,8 @@ import useGetProfileByUserId from "./useGetProfileByUserId";
 const useGetCommentsByPostId = async (postId: string) => {
     try {
         const commentsResult = await database.listDocuments(
-            "6661c33800264b634833", 
-            "6661c4d4001d9600e121", 
+            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
+            String(process.env.NEXT_PUBLIC_COLLECTION_ID_COMMENT), 
             [ 
                 Query.equal('post_id', postId),
                 Query.orderDesc("$id")

@@ -3,8 +3,8 @@ import { database, Query } from "@/libs/AppWriteClient"
 const useSearchProfilesByName = async (name: string) => {
     try {
         const profileResult = await database.listDocuments(
-            "6661c33800264b634833", 
-            "6661c35600214a1c5331", 
+            String(process.env.NEXT_PUBLIC_DATABASE_ID), 
+            String(process.env.NEXT_PUBLIC_COLLECTION_ID_PROFILE), 
             [ 
                 Query.limit(5),
                 Query.search("name", name)
